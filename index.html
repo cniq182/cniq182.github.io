@@ -1,12 +1,210 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-    <title>My Data Viz Site</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SF Crime Analysis | Data Viz</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #6366f1; /* Indigo moderno */
+            --primary-hover: #4f46e5;
+            --bg: #f8fafc;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --card-bg: rgba(255, 255, 255, 0.8);
+            --radius: 16px;
+            --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg);
+            background-image: radial-gradient(circle at top right, #e2e8f0 0%, #f8fafc 50%);
+            color: var(--text-main);
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Navigation Bar */
+        nav {
+            padding: 1.5rem 10%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-weight: 800;
+            font-size: 1.2rem;
+            letter-spacing: -0.5px;
+            color: var(--primary);
+        }
+
+        /* Hero Section */
+        header {
+            text-align: center;
+            padding: 80px 20px 40px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            letter-spacing: -0.05em;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+            background: linear-gradient(135deg, #1e293b 0%, #6366f1 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            margin-bottom: 3rem;
+        }
+
+        /* Cards Container */
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            padding: 0 10% 80px;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        /* Individual Card Style */
+        .card {
+            background: var(--card-bg);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            padding: 32px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            backdrop-filter: blur(12px);
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            border-color: var(--primary);
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+
+        .card p {
+            color: var(--text-muted);
+            margin-bottom: 24px;
+            font-size: 0.95rem;
+        }
+
+        /* Button Style */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 24px;
+            background-color: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.2s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: var(--primary-hover);
+            box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+        }
+
+        .btn-secondary {
+            background-color: #f1f5f9;
+            color: var(--text-main);
+        }
+
+        .btn-secondary:hover {
+            background-color: #e2e8f0;
+        }
+
+        /* Micro-interactions */
+        .arrow {
+            margin-left: 8px;
+            transition: transform 0.2s ease;
+        }
+        .btn:hover .arrow {
+            transform: translateX(4px);
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            nav { padding: 1.5rem 5%; }
+            .container { padding: 0 5% 40px; }
+        }
+    </style>
 </head>
 <body>
-    <h1>Fuck you Béla!</h1>
-    <p>This site will soon contain interactive data visualizations about crime in San Francisco.</p>
-    <a href="paginas/crime_hourly_interactive_1.html">Explore hourly crime patterns →</a>
-    <a href="paginas/crime_hourly_interactive_2.html">Through the years →</a>
+
+    <nav>
+        <div class="logo">SOCIAL DATA 2026</div>
+        <a href="https://github.com/" class="btn btn-secondary" style="font-size: 0.8rem;">GitHub Repo</a>
+    </nav>
+
+    <header>
+        <h1>SF Crime Analysis</h1>
+        <p class="subtitle">An interactive exploration of two decades of crime data in San Francisco — uncovering patterns across time, space, and category.</p>
+    </header>
+
+    <main class="container">
+        <div class="card">
+            <div>
+                <h3>Hourly patterns</h3>
+                <p>Análisis temporal detallado que revela cómo fluctúa el crimen según la hora del día en los distritos de SF.</p>
+            </div>
+            <a href="paginas/crime_hourly_interactive_1.html" class="btn">
+                Explorar patrones <span class="arrow">→</span>
+            </a>
+        </div>
+
+        <div class="card">
+            <div>
+                <h3>Crime map</h3>
+                <p>Visualización geoespacial interactiva para identificar puntos críticos y distribución por categorías.</p>
+            </div>
+            <a href="paginas/crime_hourly_interactive_2.html" class="btn">
+                Ver mapa dinámico <span class="arrow">→</span>
+            </a>
+        </div>
+    </main>
+
+    <footer style="text-align: center; padding: 40px; color: var(--text-muted); font-size: 0.8rem;">
+        &copy; 2026 Social Data Science Project. Built with passion and data.
+    </footer>
+
 </body>
 </html>
