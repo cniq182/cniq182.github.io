@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SF Crime Analysis | The Pandemic Shift</title>
+    <title>SF Crime: A Data Story | Assignment 2</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -11,7 +11,6 @@
             --bg: #f8fafc;
             --text-main: #1e293b;
             --text-muted: #64748b;
-            --radius: 16px;
         }
 
         body {
@@ -20,160 +19,155 @@
             color: var(--text-main);
             line-height: 1.8;
             margin: 0;
-            padding: 0;
         }
 
-        /* Hero Section */
+        /* Estilo de lectura fluida (Magazine) */
+        article {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 80px 20px;
+        }
+
         header {
             text-align: center;
-            padding: 100px 20px 60px;
-            max-width: 850px;
-            margin: 0 auto;
+            margin-bottom: 60px;
         }
 
         h1 {
             font-size: 3.5rem;
             font-weight: 800;
             letter-spacing: -0.05em;
-            margin-bottom: 1rem;
             background: linear-gradient(135deg, #1e293b 0%, #6366f1 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
         }
 
-        .subtitle {
-            font-size: 1.4rem;
+        .author-info {
             color: var(--text-muted);
-            font-weight: 300;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 40px;
         }
 
-        /* Main Narrative Content */
-        main {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 0 20px 100px;
-        }
-
-        .narrative-text {
+        p {
             font-size: 1.15rem;
-            margin-bottom: 2rem;
-            color: #334155;
+            margin-bottom: 1.5rem;
         }
 
         h2 {
             font-size: 2rem;
-            margin: 3rem 0 1rem;
-            color: var(--primary);
+            margin-top: 4rem;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 10px;
         }
 
-        /* Visualization Containers */
-        .viz-container {
-            margin: 4rem 0;
+        /* Contenedores de Visualización */
+        .figure-box {
+            margin: 3rem 0;
             background: white;
-            padding: 20px;
-            border-radius: var(--radius);
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+            padding: 25px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
             border: 1px solid #e2e8f0;
         }
 
-        .viz-container iframe {
+        .figure-box img, .figure-box iframe {
             width: 100%;
-            height: 550px;
             border: none;
             border-radius: 8px;
         }
 
-        .viz-container img {
-            width: 100%;
-            border-radius: 8px;
+        .figure-box iframe {
+            height: 500px;
         }
 
         figcaption {
-            margin-top: 1.5rem;
+            margin-top: 20px;
             font-size: 0.95rem;
             color: var(--text-muted);
-            line-height: 1.5;
-            border-left: 3px solid var(--primary);
             padding-left: 15px;
+            border-left: 4px solid var(--primary);
+        }
+
+        .highlight {
+            font-weight: 600;
+            color: var(--primary);
         }
 
         footer {
             text-align: center;
-            padding: 60px;
-            border-top: 1px solid #e2e8f0;
+            padding: 40px;
+            font-size: 0.8rem;
             color: var(--text-muted);
-            font-size: 0.9rem;
-        }
-
-        .references {
-            margin-top: 50px;
-            padding-top: 20px;
-            border-top: 1px dashed #cbd5e1;
-            font-size: 0.9rem;
+            background: #f1f5f9;
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>A City in Flux</h1>
-        <p class="subtitle">Deciphering San Francisco's crime metamorphosis during the pandemic years.</p>
-    </header>
+    <article>
+        <header>
+            <h1>The City That Changed: San Francisco’s Pandemic Metamorphosis</h1>
+            <div class="author-info">Social Data Science | Assignment 2</div>
+        </header>
 
-    <main>
-        <section class="narrative-text">
-            <p>San Francisco is a city of contrasts, where the tech boom meets deep-rooted social challenges. When the 2020 pandemic hit, the city’s streets—usually teeming with tourists and commuters—became silent. However, data from the <strong>SF Open Data Portal</strong> reveals that crime did not simply stop; it transformed.</p>
-            <p>In this short story, we explore how specific focus crimes evolved, where they concentrated, and why we must be careful when interpreting these patterns as pure "criminality."</p>
+        <section>
+            <p>San Francisco has always been a city of rapid shifts. From the Gold Rush to the Tech Boom, its streets reflect the pulse of global changes. However, nothing prepared the city for 2020. Using data from the <span class="highlight">SFPD Incident Reports (2018-2025)</span>, we can trace how crime didn't just disappear during the lockdowns—it transformed.</p>
+            
+            <p>To understand this, we must look beyond raw numbers and interpret the patterns through the lens of urban mobility and enforcement practices.</p>
         </section>
 
-        <div class="viz-container">
-            <img src="paginas/crime_trends.png" alt="Temporal Crime Trends">
+        <div class="figure-box">
+            <img src="paginas/crime_trends.png" alt="Crime Trends">
             <figcaption>
-                <strong>Figure 1: The Macro Trend.</strong> This time-series analysis shows a significant dip in property crimes like Robbery during 2020, as the pool of available victims (tourists) vanished. Interestingly, Motor Vehicle Theft showed a different resilience, suggesting that while people stayed home, their property remained vulnerable.
+                <strong>Figure 1: The Macro Trend.</strong> A clear divergence appears in 2020. While interpersonal crimes like <span class="highlight">Robbery</span> plummeted due to reduced foot traffic and tourism, <span class="highlight">Motor Vehicle Theft</span> remained resilient, peaking as cars were left unattended for longer periods.
             </figcaption>
         </div>
 
-        <section class="narrative-text">
-            <h2>The Geographic Paradox</h2>
-            <p>While the overall city volume changed, the "hotspots" remained stubbornly anchored to specific neighborhoods. As we discussed in class regarding the Richardson et al. paper, crime data is often a reflection of <strong>police activity</strong> rather than just incident occurrence. This is particularly visible in districts like the Tenderloin.</p>
+        <section>
+            <h2>A Geographic Divide</h2>
+            <p>The "ghost town" effect of 2020 was not uniform. While the Financial District stood empty, other neighborhoods saw a concentration of activity. However, as noted in the research by Richardson et al. (2019), we must be careful: crime data is often a proxy for <strong>police presence</strong>.</p>
         </section>
 
-        <div class="viz-container">
+        <div class="figure-box">
             <iframe src="paginas/crime_map.html"></iframe>
             <figcaption>
-                <strong>Figure 2: Spatial Distribution.</strong> This interactive map highlights the concentration of incidents in 2020. Even during the peak of lockdowns, central districts maintained high activity levels. This raises the question: was crime higher there, or was enforcement more concentrated in those streets?
+                <strong>Figure 2: The Hotspots of 2020.</strong> Despite the lockdowns, districts like <span class="highlight">Tenderloin</span> and <span class="highlight">Mission</span> remained high-intensity zones. This visualization highlights the persistence of specific crime categories in central hubs even when city-wide mobility was at an all-time low.
             </figcaption>
         </div>
 
-        <section class="narrative-text">
-            <h2>Rhythms of the Street</h2>
-            <p>Crime also has a pulse. By looking at the hourly distribution, we can see how the "business hours" of crime shifted. The transition from a nightlife-heavy crime profile to one dominated by daylight incidents reflects a city that had lost its 24-hour rhythm.</p>
+        <section>
+            <h2>The Daily Rhythm</h2>
+            <p>Beyond the "where", we must ask "when". Crime has a biological clock. In a normal city, incidents peak with the nightlife and the evening commute. The pandemic disrupted this 24-hour cycle, shifting the daily rhythm of the city's streets.</p>
         </section>
 
-        <div class="viz-container">
+        <div class="figure-box">
             <iframe src="paginas/interactive_plot.html"></iframe>
             <figcaption>
-                <strong>Figure 3: Hourly Patterns through the Years.</strong> Use the animation to see how the peaks of different crime categories shifted between 2018 and 2024. Notice how the evening peaks for "Assault" changed as bar closures and curfews took effect.
+                <strong>Figure 3: Exploring the Hourly Pulse.</strong> Use the slider to navigate through the years. Notice how the peaks for different crime categories shift between 2018 and 2024. The animation reveals a city transitioning from a pre-pandemic "normal" to a fragmented lockdown schedule, and finally to a new post-pandemic reality.
             </figcaption>
         </div>
 
-        <section class="narrative-text">
-            <h2>Conclusion & Reflection</h2>
-            <p>Looking at these visualizations, it is tempting to conclude that SF became "safer" or "more dangerous" at different points. However, as data storytellers, we must acknowledge the <strong>limitations</strong>. A drop in "Drug Offenses" might reflect a policy change in the DA's office or a shift in police patrols rather than a reduction in substance use. This project serves as a reminder that behind every data point, there is a complex social reality that a single chart cannot fully capture.</p>
+        <section>
+            <h2>Reflecting on the Data</h2>
+            <p>This "short data story" shows that crime is not a static phenomenon. It responds to policy, mobility, and socioeconomic strain. While our visualizations show clear trends, they also serve as a reminder of the <strong>responsibility of the analyst</strong>: we are not just showing "crimes", we are showing "reports". As Segel & Heer argue, a good narrative visualization balances the author’s message with the reader’s ability to explore—reminding us that behind every data point is a complex human story.</p>
         </section>
 
-        <section class="references">
+        <section style="margin-top: 60px; font-size: 0.9rem; color: var(--text-muted);">
+            <hr>
             <strong>References:</strong>
             <ul>
-                <li>San Francisco Police Department: Incident Reports (2018 to Present).</li>
-                <li>Richardson, R., Schultz, J. M., & Crawford, K. (2019). "Dirty Data, Bad Predictions."</li>
-                <li>Segel, E., & Heer, J. (2010). "Narrative Visualization: Telling Stories with Data."</li>
+                <li>SFPD Incident Reports: 2018 to Present. SF Open Data.</li>
+                <li>Segel, E., & Heer, J. (2010). Narrative Visualization: Telling Stories with Data.</li>
+                <li>Richardson, R., et al. (2019). Dirty Data, Bad Predictions.</li>
             </ul>
         </section>
-    </main>
+    </article>
 
     <footer>
-        &copy; 2026 Social Data Science Assignment | Built for DTU Course 02806.
+        &copy; 2026 Social Data Science Assignment | Built with Plotly, Matplotlib, and Passion.
     </footer>
 
 </body>
