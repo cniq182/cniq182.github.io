@@ -1,0 +1,70 @@
+{
+  "coords": {
+    "Vanløse": [55.6873, 12.4915],
+    "Flintholm": [55.6858, 12.4995],
+    "Lindevang": [55.6835, 12.5131],
+    "Fasanvej": [55.6817, 12.5231],
+    "Frederiksberg": [55.6812, 12.5317],
+    "Forum": [55.6818, 12.5524],
+    "Nørreport": [55.6833, 12.5717],
+    "Kongens Nytorv": [55.6794, 12.5851],
+    "Christianshavn": [55.6723, 12.5912],
+    "Islands Brygge": [55.6636, 12.5853],
+    "Dr Byen": [55.6560, 12.5889],
+    "Sundby": [55.6452, 12.5857],
+    "Bella Center": [55.6381, 12.5829],
+    "Ørestad": [55.6291, 12.5794],
+    "Vestamager": [55.6194, 12.5756],
+    "Amagerbro": [55.6636, 12.6027],
+    "Lergravsparken": [55.6622, 12.6163],
+    "Øresund": [55.6613, 12.6288],
+    "Amager Strand": [55.6561, 12.6319],
+    "Femøren": [55.6452, 12.6384],
+    "Kastrup": [55.6357, 12.6470],
+    "Københavns Lufthavn": [55.6304, 12.6493],
+    "København H": [55.6719, 12.5641],
+    "Rådhuspladsen": [55.6764, 12.5688],
+    "Gammel Strand": [55.6777, 12.5796],
+    "Marmorkirken": [55.6851, 12.5896],
+    "Østerport": [55.6932, 12.5854],
+    "Trianglen": [55.6991, 12.5761],
+    "Poul Henningsens Plads": [55.7093, 12.5767],
+    "Vibenshus Runddel": [55.7063, 12.5640],
+    "Skjolds Plads": [55.7033, 12.5482],
+    "Nørrebro": [55.6943, 12.5488],
+    "Nørrebros Runddel": [55.6939, 12.5489],
+    "Nuuks Plads": [55.6888, 12.5429],
+    "Aksel Møllers Have": [55.6864, 12.5332],
+    "Frederiksberg Allé": [55.6737, 12.5415],
+    "Enghave Plads": [55.6674, 12.5460],
+    "Havneholmen": [55.6609, 12.5594],
+    "Enghave Brygge": [55.6538, 12.5562],
+    "Sluseholmen": [55.6458, 12.5437],
+    "Mozarts Plads": [55.6490, 12.5340],
+    "København Syd": [55.6527, 12.5154],
+    "Orientkaj": [55.7111, 12.5953],
+    "Nordhavn": [55.7052, 12.5922]
+  },
+  "routes": [
+    {
+      "name": "M1",
+      "color": "#00AA47",
+      "points": ["Vanløse", "Flintholm", "Lindevang", "Fasanvej", "Frederiksberg", "Forum", "Nørreport", "Kongens Nytorv", "Christianshavn", "Islands Brygge", "Dr Byen", "Sundby", "Bella Center", "Ørestad", "Vestamager"]
+    },
+    {
+      "name": "M2",
+      "color": "#FFD100",
+      "points": ["Vanløse", "Flintholm", "Lindevang", "Fasanvej", "Frederiksberg", "Forum", "Nørreport", "Kongens Nytorv", "Christianshavn", "Amagerbro", "Lergravsparken", "Øresund", "Amager Strand", "Femøren", "Kastrup", "Københavns Lufthavn"]
+    },
+    {
+      "name": "M3",
+      "color": "#E31A1C",
+      "points": ["København H", "Rådhuspladsen", "Gammel Strand", "Kongens Nytorv", "Marmorkirken", "Østerport", "Trianglen", "Poul Henningsens Plads", "Vibenshus Runddel", "Skjolds Plads", "Nørrebro", "Nørrebros Runddel", "Nuuks Plads", "Aksel Møllers Have", "Frederiksberg", "Frederiksberg Allé", "Enghave Plads", "København H"]
+    },
+    {
+      "name": "M4",
+      "color": "#005BA8",
+      "points": ["København Syd", "Mozarts Plads", "Sluseholmen", "Enghave Brygge", "Havneholmen", "København H", "Rådhuspladsen", "Gammel Strand", "Kongens Nytorv", "Marmorkirken", "Østerport", "Nordhavn", "Orientkaj"]
+    }
+  ]
+}
